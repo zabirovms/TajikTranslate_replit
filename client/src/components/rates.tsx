@@ -52,7 +52,7 @@ export function Rates() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
               Translation Rates
             </h2>
-            <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
+            <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-4"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Professional translation services with competitive rates and fast
               turnaround times

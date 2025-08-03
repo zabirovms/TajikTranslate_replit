@@ -69,8 +69,8 @@ export function Services() {
       ref={sectionRef}
       className="py-12 lg:py-16 bg-white dark:bg-gray-800 section-reveal"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-3 sm:px-8 lg:px-8">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             What I Offer
           </h2>
