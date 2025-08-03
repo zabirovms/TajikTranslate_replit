@@ -1,0 +1,12 @@
+{
+  "name": "freelance-portfolio",
+  "version": "1.0.0",
+  "description": "A freelance portfolio website.",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
