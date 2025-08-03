@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { EmblaCarousel } from "./ui/embla-carousel";
 
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,41 +28,6 @@ export function Services() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const handleScroll = () => {
-      const scrollLeft = carousel.scrollLeft;
-      const itemWidth = carousel.offsetWidth * 0.85 + 16; // 85% width + margin
-      const newIndex = Math.round(scrollLeft / itemWidth);
-      setCurrentIndex(newIndex);
-    };
-
-    carousel.addEventListener("scroll", handleScroll);
-    return () => carousel.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Auto-slide effect
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const autoSlide = setInterval(() => {
-      const itemWidth = carousel.offsetWidth * 0.85 + 16;
-      const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
-      const nextScrollLeft = carousel.scrollLeft + itemWidth;
-      
-      if (nextScrollLeft >= maxScroll) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollTo({ left: nextScrollLeft, behavior: 'smooth' });
-      }
-    }, 4000); // Auto-slide every 4 seconds
-
-    return () => clearInterval(autoSlide);
   }, []);
 
   const services = [
@@ -103,15 +67,15 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-16 lg:py-24 bg-white dark:bg-gray-800 section-reveal"
+      className="py-12 lg:py-16 bg-white dark:bg-gray-800 section-reveal"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-3 sm:px-8 lg:px-8">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            What I Offer
+            Tajik Freelance Translation Services
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Comprehensive language and consulting services tailored to your
+            Professional Tajik translation services and consulting tailored to your
             business needs
           </p>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6"></div>
@@ -148,14 +112,11 @@ export function Services() {
           ))}
         </div>
 
-        {/* Mobile Carousel */}
+        {/* Mobile & Desktop Carousel */}
         <div className="lg:hidden">
-          <div
-            ref={carouselRef}
-            className="mobile-carousel flex overflow-x-auto pb-4"
-          >
+          <EmblaCarousel autoplayDelay={4000} options={{ loop: true }}>
             {services.map((service, index) => (
-              <div key={index} className="mobile-carousel-item">
+              <div key={index} className="px-4">
                 <div className="service-card bg-gray-50 dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full">
                   <div
                     className={`w-14 h-14 bg-${service.color}-100 dark:bg-${service.color}-900 rounded-xl flex items-center justify-center mb-4`}
@@ -180,21 +141,7 @@ export function Services() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Mobile Carousel Indicators */}
-          <div className="flex justify-center space-x-2 mt-6">
-            {services.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex
-                    ? "bg-primary"
-                    : "bg-gray-300 dark:bg-gray-600"
-                }`}
-              ></div>
-            ))}
-          </div>
+          </EmblaCarousel>
         </div>
       </div>
     </section>

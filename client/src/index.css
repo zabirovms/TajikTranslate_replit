@@ -101,8 +101,10 @@
 
   .mobile-carousel {
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-carousel::-webkit-scrollbar {
@@ -110,8 +112,9 @@
   }
 
   .mobile-carousel-item {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     flex: 0 0 auto;
+    transition: transform 0.3s ease-in-out;
   }
 }
 

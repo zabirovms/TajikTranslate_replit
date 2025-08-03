@@ -99,7 +99,7 @@ export function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-16 lg:py-24 section-reveal bg-gray-50 dark:bg-gray-900"
+      className="py-12 lg:py-16 section-reveal bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -203,66 +203,8 @@ export function Contact() {
             </form>
           </div>
 
-          {/* Contact Info */}
+          {/* Languages Info */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-primary to-emerald-500 p-8 rounded-2xl text-white">
-              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <i className="fas fa-envelope w-6 text-center mr-4"></i>
-                  <a
-                    href="mailto:zabirovms@gmail.com"
-                    className="hover:underline"
-                  >
-                    zabirovms@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <i className="fas fa-phone w-6 text-center mr-4"></i>
-                  <a href="tel:+992988894346" className="hover:underline">
-                    +992 98 889 4346
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <i className="fas fa-map-marker-alt w-6 text-center mr-4"></i>
-                  <span>Dushanbe, Tajikistan</span>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-white/20">
-                <h4 className="font-semibold mb-4">Professional Profiles</h4>
-                <div className="space-y-2">
-                  <a
-                    href="https://www.proz.com/profile/3974887"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm hover:underline"
-                  >
-                    <i className="fas fa-globe w-4 text-center mr-2"></i>
-                    ProZ Profile
-                  </a>
-                  <a
-                    href="https://www.upwork.com/freelancers/~014a96385c75074d91"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm hover:underline"
-                  >
-                    <i className="fab fa-upwork w-4 text-center mr-2"></i>
-                    Upwork Profile
-                  </a>
-                  <a
-                    href="https://www.fiverr.com/muhammadzabirov"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm hover:underline"
-                  >
-                    <i className="fas fa-star w-4 text-center mr-2"></i>
-                    Fiverr Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
               <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                 Languages I Work With

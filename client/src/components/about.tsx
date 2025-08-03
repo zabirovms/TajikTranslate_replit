@@ -34,13 +34,13 @@ export function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-16 lg:py-24 section-reveal bg-gray-50 dark:bg-gray-900"
+      className="py-12 lg:py-16 section-reveal bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-0">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              About Me
+              About Your Tajik Freelance Translator
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -58,9 +58,9 @@ export function About() {
               
               <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300">
                 <p className="text-lg sm:text-xl leading-relaxed mb-6">
-                  I am a professional translator and consultant with extensive
-                  experience working across{" "}
-                  <strong className="text-primary">
+                  I am a professional Tajik freelance translator working across multiple platforms since 2020, with extensive
+                  experience in{" "}
+                  <strong className="text-emerald-600 dark:text-emerald-400">
                     English, Tajik, Russian, and Persian (Farsi)
                   </strong>
                   . My expertise spans various fields including legal, business,
@@ -76,15 +76,15 @@ export function About() {
               {/* Stats */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">
-                    10+
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                    5+
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
                     Years Experience
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
                     4
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
@@ -92,15 +92,15 @@ export function About() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">
-                    500+
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+                    200+
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
                     Projects Completed
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-2">
+                  <div className="text-2xl sm:text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
                     99%
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">

@@ -26,12 +26,20 @@ export function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-            Professional Tajik
+            Tajik Freelance
             <span className="block text-emerald-300">Translation Services</span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-2 text-white/90">
-            by Muhammadsharif Zabirov
+            by{" "}
+            <a
+              href="https://www.upwork.com/freelancers/~014a96385c75074d91"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-300 hover:text-emerald-200 underline-offset-4 hover:underline transition-all duration-300"
+            >
+              Muhammadsharif Zabirov
+            </a>
           </p>
 
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-white/80 mb-8 leading-relaxed">
@@ -56,7 +64,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <i className="fas fa-chevron-down text-white/60 text-2xl"></i>
       </div>
     </section>

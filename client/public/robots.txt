@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tajiktranslators.com/sitemap.xml
+
+# Allow search engines to crawl all content
+# This site provides professional Tajik freelance translation services
