@@ -26,7 +26,7 @@ export function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-            Professional Tajik
+            Tajik Freelance
             <span className="block text-emerald-300">Translation Services</span>
           </h1>
 

@@ -40,7 +40,7 @@ export function About() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-0">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              About Me
+              About Your Tajik Freelance Translator
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -58,7 +58,7 @@ export function About() {
               
               <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300">
                 <p className="text-lg sm:text-xl leading-relaxed mb-6">
-                  I am a professional freelance translator working across multiple platforms since 2020, with extensive
+                  I am a professional Tajik freelance translator working across multiple platforms since 2020, with extensive
                   experience in{" "}
                   <strong className="text-emerald-600 dark:text-emerald-400">
                     English, Tajik, Russian, and Persian (Farsi)

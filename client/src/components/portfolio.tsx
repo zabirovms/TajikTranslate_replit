@@ -90,11 +90,11 @@ export function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-              Portfolio Highlights
+              Tajik Freelance Translator Portfolio
             </h2>
             <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Showcasing successful translation projects across diverse industries and language pairs
+              Showcasing successful Tajik translation projects across diverse industries and multiple languages
             </p>
           </div>
 

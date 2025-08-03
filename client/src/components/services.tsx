@@ -72,10 +72,10 @@ export function Services() {
       <div className="container mx-auto px-3 sm:px-8 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            What I Offer
+            Tajik Freelance Translation Services
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Comprehensive language and consulting services tailored to your
+            Professional Tajik translation services and consulting tailored to your
             business needs
           </p>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6"></div>

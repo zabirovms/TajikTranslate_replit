@@ -4,7 +4,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Left Side: Branding & Copyright */}
         <div className="text-center md:text-left">
-          <p className="text-white font-semibold text-base mb-1">TajikTranslators</p>
+          <p className="text-white font-semibold text-base mb-1">TajikTranslators - Freelance Translation</p>
           <p className="text-xs text-gray-500">© {new Date().getFullYear()} Muhammadsharif Zabirov</p>
         </div>
 
