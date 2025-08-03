@@ -103,7 +103,7 @@ export function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="py-16 lg:py-24 bg-white dark:bg-gray-800 section-reveal"
+      className="py-12 lg:py-16 bg-white dark:bg-gray-800 section-reveal"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

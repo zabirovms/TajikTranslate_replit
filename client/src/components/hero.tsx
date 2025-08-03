@@ -31,7 +31,14 @@ export function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-2 text-white/90">
-            by Muhammadsharif Zabirov
+            by <a 
+              href="https://www.upwork.com/freelancers/muhammadsharf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-emerald-300 hover:text-emerald-200 underline-offset-4 hover:underline transition-all duration-300"
+            >
+              Muhammadsharif Zabirov
+            </a>
           </p>
 
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-white/80 mb-8 leading-relaxed">

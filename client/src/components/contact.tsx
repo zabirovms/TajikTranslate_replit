@@ -99,7 +99,7 @@ export function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-16 lg:py-24 section-reveal bg-gray-50 dark:bg-gray-900"
+      className="py-12 lg:py-16 section-reveal bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
