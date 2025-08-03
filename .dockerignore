@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+.cache
+.local
+.upm
+.npm
+.git
+*.log
+README.md
+DEPLOYMENT.md
+replit.md
+.replit
+Procfile
+build.sh

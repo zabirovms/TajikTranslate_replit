@@ -1,10 +1,10 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Health check endpoints for Railway and other deployment platforms
-  app.get('/api/health', (req, res) => {
+  app.get('/api/health', (req: Request, res: Response) => {
     res.json({ 
       status: "ok",
       timestamp: new Date().toISOString(),
@@ -13,7 +13,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Root API endpoint
-  app.get('/api', (req, res) => {
+  app.get('/api', (req: Request, res: Response) => {
     res.json({ 
       message: "TajikTranslate API is running",
       status: "healthy"

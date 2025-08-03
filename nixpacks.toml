@@ -1,14 +1,15 @@
 [variables]
 NODE_ENV = "production"
-NODE_VERSION = "20"
+
+[phases.setup]
+nixPkgs = ["nodejs_20"]
 
 [phases.build]
 cmds = [
-  "npm ci --verbose",
+  "npm ci",
   "npm run build",
-  "mkdir -p dist/attached_assets",
-  "cp -r attached_assets/* dist/attached_assets/"
+  "cp -r attached_assets dist/"
 ]
 
-[phases.start]
+[start]
 cmd = "node dist/index.js"
