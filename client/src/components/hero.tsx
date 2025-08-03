@@ -31,9 +31,10 @@ export function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-2 text-white/90">
-            by <a 
-              href="https://www.upwork.com/freelancers/~014a96385c75074d91" 
-              target="_blank" 
+            by{" "}
+            <a
+              href="https://www.upwork.com/freelancers/~014a96385c75074d91"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-300 hover:text-emerald-200 underline-offset-4 hover:underline transition-all duration-300"
             >
@@ -63,7 +64,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <i className="fas fa-chevron-down text-white/60 text-2xl"></i>
       </div>
     </section>

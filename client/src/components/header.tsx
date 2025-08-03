@@ -15,19 +15,19 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < lastScrollY || currentScrollY < 100) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
         setMobileMenuOpen(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   const scrollToSection = (id: string) => {
@@ -43,9 +43,11 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-40 glass-effect transition-all duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <header
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } bg-white dark:bg-gray-900 shadow-md`}
+    >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
