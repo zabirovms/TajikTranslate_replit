@@ -47,6 +47,15 @@ export function About() {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
+              {/* Profile Image - Now in About section */}
+              <div className="flex justify-center lg:hidden mb-8">
+                <img
+                  src={profileImage}
+                  alt="Muhammadsharif Zabirov"
+                  className="w-40 h-40 rounded-full shadow-2xl border-4 border-primary/20 object-cover"
+                />
+              </div>
+              
               <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300">
                 <p className="text-lg sm:text-xl leading-relaxed mb-6">
                   I am a professional translator and consultant with extensive
@@ -102,12 +111,12 @@ export function About() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-emerald-500 rounded-2xl transform rotate-6"></div>
+              <div className="relative hidden lg:block">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-emerald-500 rounded-full transform rotate-6 w-80 h-80 mx-auto"></div>
                 <img
                   src={profileImage}
                   alt="Muhammadsharif Zabirov"
-                  className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-square"
+                  className="relative rounded-full shadow-2xl w-80 h-80 mx-auto object-cover border-4 border-white dark:border-gray-800"
                 />
               </div>
             </div>

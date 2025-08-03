@@ -22,7 +22,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
+    <header className="fixed top-0 w-full z-40 glass-effect transition-all duration-300">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

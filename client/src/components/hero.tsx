@@ -25,15 +25,6 @@ export function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
         <div className="animate-fade-in">
-          {/* Profile Image */}
-          <div className="mb-8">
-            <img
-              src={profileImage}
-              alt="Muhammadsharif Zabirov"
-              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto shadow-2xl border-4 border-white/30 object-cover"
-            />
-          </div>
-
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
             Professional Tajik
             <span className="block text-emerald-300">Translation Services</span>

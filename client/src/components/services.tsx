@@ -46,6 +46,26 @@ export function Services() {
     return () => carousel.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Auto-slide effect
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const autoSlide = setInterval(() => {
+      const itemWidth = carousel.offsetWidth * 0.85 + 16;
+      const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+      const nextScrollLeft = carousel.scrollLeft + itemWidth;
+      
+      if (nextScrollLeft >= maxScroll) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollTo({ left: nextScrollLeft, behavior: 'smooth' });
+      }
+    }, 4000); // Auto-slide every 4 seconds
+
+    return () => clearInterval(autoSlide);
+  }, []);
+
   const services = [
     {
       icon: "fas fa-language",
