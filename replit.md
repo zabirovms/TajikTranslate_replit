@@ -8,6 +8,14 @@ TajikTranslate is a professional translation services portfolio website for Muha
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes (January 2025)
+
+- Completed mobile-first responsive redesign of translation portfolio
+- Fixed image serving for both development and production environments
+- Added Railway deployment configuration with custom build process
+- Preserved all original contact information and professional profiles
+- Implemented modern React components with dark/light theme support
+
 ## System Architecture
 
 ### Frontend Architecture

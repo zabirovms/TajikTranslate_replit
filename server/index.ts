@@ -1,13 +1,22 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Get current directory for production compatibility
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve static assets from attached_assets directory
-app.use('/attached_assets', express.static('attached_assets'));
+const assetsPath = process.env.NODE_ENV === 'production' 
+  ? path.join(__dirname, 'attached_assets')
+  : 'attached_assets';
+app.use('/attached_assets', express.static(assetsPath));
 
 app.use((req, res, next) => {
   const start = Date.now();

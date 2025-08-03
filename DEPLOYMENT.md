@@ -19,6 +19,12 @@
    - In Railway dashboard, go to Settings > Domains
    - Add your custom domain if desired
 
+## ✅ Fixed Issues
+
+- **Production Path Resolution**: Fixed `import.meta.dirname` issue in production builds
+- **Static Asset Serving**: Images and files now serve correctly in both development and production
+- **Build Process**: Custom build script handles all asset copying and compilation
+
 ## Build Process
 
 The custom build script (`build.sh`) handles:
