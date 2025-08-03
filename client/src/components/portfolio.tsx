@@ -34,7 +34,7 @@ export function Portfolio() {
       title: "Legal Document Translation",
       category: "Legal",
       description: "Contract translations for international business agreements",
-      languages: "English ↔ Tajik",
+      languages: "Multiple Languages",
       highlight: "50+ legal documents translated with 100% accuracy",
       icon: "fas fa-gavel"
     },
@@ -42,7 +42,7 @@ export function Portfolio() {
       title: "Medical Research Papers",
       category: "Medical",
       description: "Scientific research and medical documentation translation",
-      languages: "Russian ↔ English",
+      languages: "Multiple Languages",
       highlight: "Published research papers for medical journals",
       icon: "fas fa-heartbeat"
     },
@@ -50,7 +50,7 @@ export function Portfolio() {
       title: "Business Presentations",
       category: "Business",
       description: "Corporate presentations and marketing materials",
-      languages: "Persian ↔ English",
+      languages: "Multiple Languages",
       highlight: "International trade presentations for Fortune 500 companies",
       icon: "fas fa-chart-line"
     },
@@ -58,7 +58,7 @@ export function Portfolio() {
       title: "Technical Manuals",
       category: "Technical",
       description: "Software documentation and user manuals",
-      languages: "English ↔ Tajik",
+      languages: "Multiple Languages",
       highlight: "Complex technical documentation for software companies",
       icon: "fas fa-cogs"
     },
@@ -74,7 +74,7 @@ export function Portfolio() {
       title: "Educational Content",
       category: "Education",
       description: "Academic papers and educational materials",
-      languages: "Russian ↔ Tajik",
+      languages: "Multiple Languages",
       highlight: "University curriculum and online course content",
       icon: "fas fa-graduation-cap"
     }
@@ -138,49 +138,7 @@ export function Portfolio() {
             ))}
           </div>
 
-          <div className="text-center bg-emerald-50 dark:bg-emerald-900/20 p-8 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
-              Professional Workflow Process
-            </h3>
-            <div className="grid md:grid-cols-4 gap-6 mt-8">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
-                  1
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Analysis</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Document review and terminology research
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
-                  2
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Translation</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Professional translation using CAT tools
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
-                  3
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Quality Check</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Thorough proofreading and QA review
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
-                  4
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Delivery</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Final delivery with formatting preserved
-                </p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

@@ -203,9 +203,8 @@ export function Contact() {
             </form>
           </div>
 
-          {/* Contact Info - Moved to Footer */}
+          {/* Languages Info */}
           <div className="space-y-8">
-
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
               <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                 Languages I Work With
