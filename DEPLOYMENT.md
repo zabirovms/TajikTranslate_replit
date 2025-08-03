@@ -24,6 +24,23 @@
 - **Production Path Resolution**: Fixed `import.meta.dirname` issue in production builds
 - **Static Asset Serving**: Images and files now serve correctly in both development and production
 - **Build Process**: Custom build script handles all asset copying and compilation
+- **Railway Configuration**: Added nixpacks.toml and Procfile for proper deployment
+
+## Troubleshooting Railway Deployment
+
+If you encounter "service unavailable" errors:
+
+1. **Check Build Logs**: Ensure the build completes successfully
+2. **Port Configuration**: Railway automatically assigns PORT environment variable
+3. **Health Check**: The app should respond on the root path `/`
+4. **Build Process**: Uses nixpacks.toml configuration for proper build steps
+
+## Alternative Deployment Options
+
+If Railway continues to have issues, you can also deploy to:
+- **Vercel**: Add `vercel.json` configuration
+- **Netlify**: Build static version and deploy
+- **Heroku**: Uses existing Procfile configuration
 
 ## Build Process
 

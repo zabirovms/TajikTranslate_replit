@@ -1,0 +1,14 @@
+[phases.build]
+cmds = [
+  "npm ci",
+  "vite build",
+  "mkdir -p dist/attached_assets",
+  "cp -r attached_assets/* dist/attached_assets/",
+  "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist"
+]
+
+[phases.start]
+cmd = "node dist/index.js"
+
+[variables]
+NODE_ENV = "production"
