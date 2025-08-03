@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 // Get current directory for production compatibility
 const __filename = fileURLToPath(import.meta.url);
@@ -65,7 +66,22 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // Production static file serving
+    const distPath = path.join(__dirname, "public");
+    const assetsPath = path.join(__dirname, "attached_assets");
+    
+    // Serve attached assets
+    if (fs.existsSync(assetsPath)) {
+      app.use('/attached_assets', express.static(assetsPath));
+    }
+    
+    // Serve built static files
+    app.use(express.static(distPath));
+    
+    // Fallback to index.html for SPA routing
+    app.use("*", (_req, res) => {
+      res.sendFile(path.join(distPath, "index.html"));
+    });
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
