@@ -152,11 +152,12 @@ export function Services() {
         <div className="lg:hidden">
           <div
             ref={carouselRef}
-            className="mobile-carousel flex overflow-x-auto pb-4"
+            className="mobile-carousel flex overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {services.map((service, index) => (
-              <div key={index} className="mobile-carousel-item">
-                <div className="service-card bg-gray-50 dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full">
+              <div key={index} className="mobile-carousel-item snap-center">
+                <div className="service-card bg-gray-50 dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
                   <div
                     className={`w-14 h-14 bg-${service.color}-100 dark:bg-${service.color}-900 rounded-xl flex items-center justify-center mb-4`}
                   >
@@ -183,16 +184,26 @@ export function Services() {
           </div>
 
           {/* Mobile Carousel Indicators */}
-          <div className="flex justify-center space-x-2 mt-6">
+          <div className="flex justify-center space-x-3 mt-6">
             {services.map((_, index) => (
-              <div
+              <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
+                onClick={() => {
+                  const carousel = carouselRef.current;
+                  if (carousel) {
+                    const itemWidth = carousel.offsetWidth * 0.85 + 16;
+                    carousel.scrollTo({ 
+                      left: index * itemWidth, 
+                      behavior: 'smooth' 
+                    });
+                  }
+                }}
+                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                   index === currentIndex
-                    ? "bg-primary"
-                    : "bg-gray-300 dark:bg-gray-600"
+                    ? "bg-emerald-500 w-4"
+                    : "bg-gray-300 dark:bg-gray-600 hover:bg-emerald-400 dark:hover:bg-emerald-500"
                 }`}
-              ></div>
+              ></button>
             ))}
           </div>
         </div>

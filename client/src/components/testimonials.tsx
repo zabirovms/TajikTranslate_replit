@@ -5,6 +5,49 @@ export function Testimonials() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const testimonials = [
+    {
+      text: "Muhammad Z truly exceeded expectations with his impressive attention to detail and adaptability to our brief. His language fluency and commitment to going above and beyond made working with him a pleasure, and he delivered everything on time. An EXEMPLARY translator experience!",
+      name: "Hani Bushra",
+      platform: "Fiverr",
+      url: "https://www.fiverr.com/muhammadsharif_z",
+      initials: "HB",
+      color: "emerald",
+    },
+    {
+      text: "I was truly impressed with his work. He demonstrated exceptional attention to detail, responsiveness, and expertise throughout the project... I highly recommend him and look forward to working with him again.",
+      name: "Rolf Hjelpdahl",
+      platform: "Upwork",
+      url: "https://www.upwork.com/freelancers/muhammadsharf",
+      initials: "RH",
+      color: "green",
+    },
+    {
+      text: "Fast delivery. Very reliable and he is an expert in the Tajik language. I recommend buying your Tajik language gigs from him.",
+      name: "Dave Straub",
+      platform: "Fiverr",
+      url: "https://www.fiverr.com/muhammadsharif_z",
+      initials: "DS",
+      color: "blue",
+    },
+    {
+      text: "Muhammadsharif is an exceptional translator. Not only he delivered me translation in a really timely manner, translation was done professionally and all complex terms were correctly translated. True A+ Russian translator.",
+      name: "Yurii Shynkarenko",
+      platform: "Upwork",
+      url: "https://www.upwork.com/freelancers/muhammadsharf",
+      initials: "YS",
+      color: "purple",
+    },
+    {
+      text: "Muhammad Sharif understood the task and delivered the project before the deadline. He is talented and hardworking. There are few freelancers who you are lucky to work with and Muhammad is one of them.",
+      name: "Layla Kay",
+      platform: "Upwork",
+      url: "https://www.upwork.com/freelancers/muhammadsharf",
+      initials: "LK",
+      color: "indigo",
+    },
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,36 +78,15 @@ export function Testimonials() {
   useEffect(() => {
     const autoSlide = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // Auto-slide every 5 seconds
+    }, 6000); // Auto-slide every 6 seconds
 
     return () => clearInterval(autoSlide);
-  }, []);
+  }, [testimonials.length]);
 
   // Handle manual navigation
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
-
-  const testimonials = [
-    {
-      text: "Muhammadsharif's translations are consistently accurate and culturally appropriate. His work has been invaluable for our international projects.",
-      name: "International NGO Director",
-      initials: "ID",
-      color: "primary",
-    },
-    {
-      text: "His attention to detail and knowledge of legal terminology is exceptional. We trust him with our most sensitive documents.",
-      name: "Law Firm Partner",
-      initials: "LP",
-      color: "emerald",
-    },
-    {
-      text: "His work helped our film resonate authentically with Tajik audiences. The subtitles captured both meaning and cultural nuance perfectly.",
-      name: "Documentary Filmmaker",
-      initials: "DF",
-      color: "purple",
-    },
-  ];
 
   return (
     <section
@@ -87,7 +109,7 @@ export function Testimonials() {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Current Testimonial */}
-            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg text-center min-h-[300px] flex flex-col justify-center">
+            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg text-center min-h-[320px] flex flex-col justify-center transition-all duration-500 ease-in-out transform">
               <div className="flex justify-center mb-6">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
@@ -105,9 +127,14 @@ export function Testimonials() {
                   {testimonials[currentIndex].initials}
                 </div>
                 <div>
-                  <div className="font-medium text-gray-900 dark:text-white text-lg">
+                  <a 
+                    href={testimonials[currentIndex].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-900 dark:text-white text-lg hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors underline-offset-4 hover:underline"
+                  >
                     {testimonials[currentIndex].name}
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -115,28 +142,28 @@ export function Testimonials() {
             {/* Navigation Arrows */}
             <button
               onClick={() => goToSlide((currentIndex - 1 + testimonials.length) % testimonials.length)}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 z-10"
             >
               <i className="fas fa-chevron-left text-gray-600 dark:text-gray-300"></i>
             </button>
             <button
               onClick={() => goToSlide((currentIndex + 1) % testimonials.length)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 z-10"
             >
               <i className="fas fa-chevron-right text-gray-600 dark:text-gray-300"></i>
             </button>
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
+          <div className="flex justify-center space-x-3 mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                   index === currentIndex
-                    ? "bg-primary"
-                    : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+                    ? "bg-emerald-500 w-4"
+                    : "bg-gray-300 dark:bg-gray-600 hover:bg-emerald-400 dark:hover:bg-emerald-500"
                 }`}
               ></button>
             ))}
