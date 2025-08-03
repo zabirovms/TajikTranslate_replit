@@ -32,7 +32,7 @@ export function Hero() {
 
           <p className="text-lg sm:text-xl md:text-2xl mb-2 text-white/90">
             by <a 
-              href="https://www.upwork.com/freelancers/muhammadsharf" 
+              href="https://www.upwork.com/freelancers/~014a96385c75074d91" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-emerald-300 hover:text-emerald-200 underline-offset-4 hover:underline transition-all duration-300"

@@ -34,7 +34,7 @@ export function ProfessionalProfiles() {
     {
       name: "Upwork",
       description: "Top Rated Plus freelancer with 100% job success score",
-      url: "https://www.upwork.com/freelancers/muhammadsharf",
+      url: "https://www.upwork.com/freelancers/~014a96385c75074d91",
       icon: "fab fa-upwork",
       color: "text-green-600 dark:text-green-400",
       bgColor: "bg-green-50 dark:bg-green-900/20",
@@ -43,7 +43,7 @@ export function ProfessionalProfiles() {
     {
       name: "ProZ",
       description: "Certified professional translator with verified credentials",
-      url: "https://www.proz.com/profile/1234567",
+      url: "https://www.proz.com/profile/3974887",
       icon: "fas fa-certificate",
       color: "text-blue-600 dark:text-blue-400",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
@@ -52,7 +52,7 @@ export function ProfessionalProfiles() {
     {
       name: "LinkedIn",
       description: "Professional network and business connections",
-      url: "https://www.linkedin.com/in/muhammadsharif-zabirov",
+      url: "https://www.linkedin.com/in/muhammadsharif-zabirov-64850a230",
       icon: "fab fa-linkedin",
       color: "text-blue-700 dark:text-blue-300",
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
@@ -61,7 +61,7 @@ export function ProfessionalProfiles() {
     {
       name: "Fiverr",
       description: "Level 2 seller offering premium translation services",
-      url: "https://www.fiverr.com/muhammadsharif_z",
+      url: "https://www.fiverr.com/muhammadzabirov",
       icon: "fas fa-star",
       color: "text-emerald-600 dark:text-emerald-400",
       bgColor: "bg-emerald-50 dark:bg-emerald-900/20",

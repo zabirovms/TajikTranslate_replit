@@ -24,10 +24,10 @@ export function Footer() {
           <a href="https://www.proz.com/profile/3974887" title="ProZ" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             <i className="fas fa-globe"></i>
           </a>
-          <a href="https://www.upwork.com/freelancers/muhammadsharf" title="Upwork" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://www.upwork.com/freelancers/~014a96385c75074d91" title="Upwork" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             <i className="fab fa-upwork"></i>
           </a>
-          <a href="https://www.fiverr.com/muhammadsharif_z" title="Fiverr" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://www.fiverr.com/muhammadzabirov" title="Fiverr" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             <i className="fas fa-star"></i>
           </a>
           <a href="https://wa.me/992988894346" title="WhatsApp" target="_blank" rel="noopener noreferrer" className="hover:text-white">
