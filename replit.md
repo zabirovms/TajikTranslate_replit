@@ -8,11 +8,15 @@ TajikTranslate is a professional translation services portfolio website for Muha
 
 Preferred communication style: Simple, everyday language.
 
-## Recent Changes (January 2025)
+## Recent Changes (August 2025)
 
 - Completed mobile-first responsive redesign of translation portfolio
 - Fixed image serving for both development and production environments
 - Added Railway deployment configuration with custom build process
+- **Fixed critical Railway deployment issues**: Resolved `import.meta.dirname` path resolution in production
+- **Added health check endpoints**: `/api/health` for Railway deployment monitoring
+- **Updated nixpacks configuration**: Node.js 20, verbose npm ci, proper asset copying
+- **Regenerated package-lock.json**: Fixed npm ci exit code 240 error
 - Preserved all original contact information and professional profiles
 - Implemented modern React components with dark/light theme support
 
