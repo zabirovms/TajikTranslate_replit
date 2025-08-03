@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { EmblaCarousel } from "./ui/embla-carousel";
 
 export function Tools() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -94,7 +95,8 @@ export function Tools() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-8">
             {tools.map((toolCategory, index) => (
               <div 
                 key={index}
@@ -121,6 +123,37 @@ export function Tools() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Mobile & Tablet Carousel */}
+          <div className="lg:hidden">
+            <EmblaCarousel autoplayDelay={4000} options={{ loop: true }}>
+              {tools.map((toolCategory, index) => (
+                <div key={index} className="px-4">
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg h-full">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i className={`${toolCategory.icon} text-2xl text-emerald-600 dark:text-emerald-400`}></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        {toolCategory.category}
+                      </h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {toolCategory.items.map((tool, toolIndex) => (
+                        <li 
+                          key={toolIndex}
+                          className="flex items-center text-gray-600 dark:text-gray-300"
+                        >
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></div>
+                          <span className="text-sm">{tool}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </EmblaCarousel>
           </div>
 
           <div className="mt-12 text-center bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">

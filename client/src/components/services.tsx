@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { EmblaCarousel } from "./ui/embla-carousel";
 
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,41 +28,6 @@ export function Services() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const handleScroll = () => {
-      const scrollLeft = carousel.scrollLeft;
-      const itemWidth = carousel.offsetWidth * 0.85 + 16; // 85% width + margin
-      const newIndex = Math.round(scrollLeft / itemWidth);
-      setCurrentIndex(newIndex);
-    };
-
-    carousel.addEventListener("scroll", handleScroll);
-    return () => carousel.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Auto-slide effect
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const autoSlide = setInterval(() => {
-      const itemWidth = carousel.offsetWidth * 0.85 + 16;
-      const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
-      const nextScrollLeft = carousel.scrollLeft + itemWidth;
-      
-      if (nextScrollLeft >= maxScroll) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        carousel.scrollTo({ left: nextScrollLeft, behavior: 'smooth' });
-      }
-    }, 4000); // Auto-slide every 4 seconds
-
-    return () => clearInterval(autoSlide);
   }, []);
 
   const services = [
@@ -148,16 +112,12 @@ export function Services() {
           ))}
         </div>
 
-        {/* Mobile Carousel */}
+        {/* Mobile & Desktop Carousel */}
         <div className="lg:hidden">
-          <div
-            ref={carouselRef}
-            className="mobile-carousel flex overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
+          <EmblaCarousel autoplayDelay={4000} options={{ loop: true }}>
             {services.map((service, index) => (
-              <div key={index} className="mobile-carousel-item snap-center">
-                <div className="service-card bg-gray-50 dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1">
+              <div key={index} className="px-4">
+                <div className="service-card bg-gray-50 dark:bg-gray-700 p-6 rounded-2xl shadow-lg h-full">
                   <div
                     className={`w-14 h-14 bg-${service.color}-100 dark:bg-${service.color}-900 rounded-xl flex items-center justify-center mb-4`}
                   >
@@ -181,31 +141,7 @@ export function Services() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Mobile Carousel Indicators */}
-          <div className="flex justify-center space-x-3 mt-6">
-            {services.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  const carousel = carouselRef.current;
-                  if (carousel) {
-                    const itemWidth = carousel.offsetWidth * 0.85 + 16;
-                    carousel.scrollTo({ 
-                      left: index * itemWidth, 
-                      behavior: 'smooth' 
-                    });
-                  }
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
-                  index === currentIndex
-                    ? "bg-emerald-500 w-4"
-                    : "bg-gray-300 dark:bg-gray-600 hover:bg-emerald-400 dark:hover:bg-emerald-500"
-                }`}
-              ></button>
-            ))}
-          </div>
+          </EmblaCarousel>
         </div>
       </div>
     </section>

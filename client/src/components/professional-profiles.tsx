@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { EmblaCarousel } from "./ui/embla-carousel";
 
 export function ProfessionalProfiles() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -86,7 +87,8 @@ export function ProfessionalProfiles() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
             {profiles.map((profile, index) => (
               <a
                 key={index}
@@ -111,6 +113,37 @@ export function ProfessionalProfiles() {
                 </div>
               </a>
             ))}
+          </div>
+
+          {/* Mobile & Tablet Carousel */}
+          <div className="lg:hidden">
+            <EmblaCarousel autoplayDelay={4000} options={{ loop: true }}>
+              {profiles.map((profile, index) => (
+                <div key={index} className="px-4">
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${profile.bgColor} p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 block h-full`}
+                  >
+                    <div className="text-center">
+                      <div className={`w-16 h-16 ${profile.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gray-200 dark:border-gray-600`}>
+                        <i className={`${profile.icon} text-2xl ${profile.color}`}></i>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                        {profile.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                        {profile.description}
+                      </p>
+                      <div className={`text-xs font-semibold ${profile.color} bg-white dark:bg-gray-800 px-3 py-1 rounded-full`}>
+                        {profile.stats}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </EmblaCarousel>
           </div>
 
           <div className="mt-12 text-center bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">

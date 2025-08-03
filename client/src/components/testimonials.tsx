@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { TestimonialsCarousel } from "./ui/embla-carousel";
 
 export function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
     {
@@ -74,20 +73,6 @@ export function Testimonials() {
     };
   }, []);
 
-  // Auto-slide effect for testimonials
-  useEffect(() => {
-    const autoSlide = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000); // Auto-slide every 6 seconds
-
-    return () => clearInterval(autoSlide);
-  }, [testimonials.length]);
-
-  // Handle manual navigation
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <section
       id="testimonials"
@@ -107,67 +92,41 @@ export function Testimonials() {
 
         {/* Testimonials Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Current Testimonial */}
-            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg text-center min-h-[320px] flex flex-col justify-center transition-all duration-500 ease-in-out transform">
-              <div className="flex justify-center mb-6">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <i key={i} className="fas fa-star text-xl"></i>
-                  ))}
+          <TestimonialsCarousel autoplayDelay={4000}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="px-4">
+                <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg text-center min-h-[320px] flex flex-col justify-center">
+                  <div className="flex justify-center mb-6">
+                    <div className="flex text-yellow-400">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-xl"></i>
+                      ))}
+                    </div>  
+                  </div>
+                  <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center justify-center">
+                    <div
+                      className={`w-12 h-12 bg-${testimonial.color}-500 rounded-full flex items-center justify-center text-white font-bold mr-4`}
+                    >
+                      {testimonial.initials}
+                    </div>
+                    <div>
+                      <a 
+                        href={testimonial.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-gray-900 dark:text-white text-lg hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors underline-offset-4 hover:underline"
+                      >
+                        {testimonial.name}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
-                "{testimonials[currentIndex].text}"
-              </p>
-              <div className="flex items-center justify-center">
-                <div
-                  className={`w-12 h-12 bg-${testimonials[currentIndex].color}-500 rounded-full flex items-center justify-center text-white font-bold mr-4`}
-                >
-                  {testimonials[currentIndex].initials}
-                </div>
-                <div>
-                  <a 
-                    href={testimonials[currentIndex].url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-gray-900 dark:text-white text-lg hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors underline-offset-4 hover:underline"
-                  >
-                    {testimonials[currentIndex].name}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={() => goToSlide((currentIndex - 1 + testimonials.length) % testimonials.length)}
-              className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 z-10"
-            >
-              <i className="fas fa-chevron-left text-gray-600 dark:text-gray-300"></i>
-            </button>
-            <button
-              onClick={() => goToSlide((currentIndex + 1) % testimonials.length)}
-              className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 hover:scale-110 z-10"
-            >
-              <i className="fas fa-chevron-right text-gray-600 dark:text-gray-300"></i>
-            </button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-3 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
-                  index === currentIndex
-                    ? "bg-emerald-500 w-4"
-                    : "bg-gray-300 dark:bg-gray-600 hover:bg-emerald-400 dark:hover:bg-emerald-500"
-                }`}
-              ></button>
             ))}
-          </div>
+          </TestimonialsCarousel>
         </div>
       </div>
     </section>

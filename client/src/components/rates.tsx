@@ -15,7 +15,7 @@ export function Rates() {
       {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -54,7 +54,8 @@ export function Rates() {
             </h2>
             <div className="w-24 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Professional translation services with competitive rates and fast turnaround times
+              Professional translation services with competitive rates and fast
+              turnaround times
             </p>
           </div>
 
@@ -64,7 +65,10 @@ export function Rates() {
                 Standard Translation
               </h3>
               <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-3">
-                $0.08 - $0.12 <span className="text-sm font-normal text-gray-600 dark:text-gray-400">per word</span>
+                $0.04 - $0.06{" "}
+                <span className="text-sm font-normal text-gray-600 dark:text-gray-400">
+                  per word
+                </span>
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center">
@@ -87,7 +91,10 @@ export function Rates() {
                 Specialized Translation
               </h3>
               <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-3">
-                $0.12 - $0.20 <span className="text-sm font-normal text-gray-600 dark:text-gray-400">per word</span>
+                $0.06 - $0.08{" "}
+                <span className="text-sm font-normal text-gray-600 dark:text-gray-400">
+                  per word
+                </span>
               </div>
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center">
@@ -111,8 +118,8 @@ export function Rates() {
               Need a Custom Quote?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Every project is unique. Contact me for a personalized quote based on your specific requirements, 
-              timeline, and document complexity.
+              Every project is unique. Contact me for a personalized quote based
+              on your specific requirements, timeline, and document complexity.
             </p>
             <button
               onClick={() => scrollToSection("contact")}
