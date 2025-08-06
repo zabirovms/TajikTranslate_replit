@@ -97,6 +97,13 @@ export function Portfolio() {
               Showcasing successful Tajik translation projects across diverse industries and multiple languages
             </p>
           </div>
+          
+          <div className="text-center mt-8">
+            <a href="/portfolio" className="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+              View Full Portfolio
+              <i className="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {portfolioItems.map((item, index) => (

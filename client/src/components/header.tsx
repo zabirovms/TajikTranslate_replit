@@ -74,6 +74,12 @@ export function Header() {
             >
               Services
             </button>
+            <a
+              href="/portfolio"
+              className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
+            >
+              Portfolio
+            </a>
             <button
               onClick={() => scrollToSection("rates")}
               className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
@@ -86,12 +92,7 @@ export function Header() {
             >
               Tools
             </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
-            >
-              Portfolio
-            </button>
+
             <button
               onClick={() => scrollToSection("testimonials")}
               className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
@@ -144,6 +145,12 @@ export function Header() {
               >
                 Services
               </button>
+              <a
+                href="/portfolio"
+                className="block w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              >
+                Portfolio
+              </a>
               <button
                 onClick={() => scrollToSection("rates")}
                 className="block w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"

@@ -22,6 +22,9 @@ Preferred communication style: Simple, everyday language.
 - **SEO Meta Tags**: Updated HTML meta tags with geo-location and professional translator keywords
 - **Structured Data**: Added JSON-LD schema markup for better search engine understanding
 - **Robots.txt**: Created search engine crawling instructions for better discoverability
+- **Portfolio Page**: Created dedicated `/portfolio` page to showcase translation projects in detail
+- **Project Showcase**: Added comprehensive project display with Hercolubus book translation including book cover, website screenshot, YouTube embed, and client testimonials
+- **Navigation Updates**: Added Portfolio link to header and "View Full Portfolio" button on homepage
 - Fixed image serving for both development and production environments
 - Added Railway deployment configuration with custom build process
 - **Fixed critical Railway deployment issues**: Resolved `import.meta.dirname` path resolution in production
