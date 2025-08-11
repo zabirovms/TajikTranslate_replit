@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { SeoIntro } from "@/components/seo-intro";
 import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Rates } from "@/components/rates";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <Hero />
       <main className="space-y-0">
+        <SeoIntro />
         <About />
         <Services />
         <Rates />
